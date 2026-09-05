@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h1>IT Support Dashboard</h1>
+
+<p>Welcome, {{ username }}</p>
+
+<hr>
+
+<h2>Support Tickets</h2>
+
+{% for ticket in tickets %}
+
+<div>
+    <h3>{{ ticket["title"] }}</h3>
+    <p>{{ ticket["description"] }}</p>
+    <strong>Status: {{ ticket["status"] }}</strong>
+</div>
+
+<hr>
+
+{% endfor %}
+
+<a href="/search">Search Tickets</a>
+
+</body>
+</html>

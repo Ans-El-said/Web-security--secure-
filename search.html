@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Search</title>
+</head>
+<body>
+
+<h1>Search Support Tickets</h1>
+
+<form method="GET">
+
+    <input
+        type="text"
+        name="q"
+        placeholder="Search tickets..."
+        value="{{ search_term }}"
+    >
+
+    <button type="submit">Search</button>
+
+</form>
+
+<hr>
+
+{% if tickets %}
+
+{% for ticket in tickets %}
+
+<h3>{{ ticket["title"] }}</h3>
+<p>{{ ticket["description"] }}</p>
+<p>Status: {{ ticket["status"] }}</p>
+<p>Search results for: {{ search_term|safe }}</p>
+
+<hr>
+
+{% endfor %}
+
+{% else %}
+
+<p>No tickets found.</p>
+
+{% endif %}
+
+</body>
+</html>
